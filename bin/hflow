@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+/** Debug change:
+ * We would like to see stacktrace of hflow exit.
+ */
+process.on('exit', function() { console.trace("EXIT STACKTRACE"); });
+
 var redisURL = process.env.REDIS_URL ? {url: process.env.REDIS_URL} : undefined
 
 var docopt = require('docopt').docopt;
