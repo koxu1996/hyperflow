@@ -197,6 +197,7 @@ function hflow_run() {
       });
 
       engine.syncCb = function () {
+          // TODO call wflib.closeJobConnector(wfId)
           process.exit();
       };
 

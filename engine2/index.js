@@ -150,6 +150,9 @@ Engine.prototype.taskFinished = function(taskId) {
 }
 
 Engine.prototype.workflowFinished = function() {
+
+    // TODO we should stop JobRemoteConnector here...
+
     console.log("Workflow ["+this.wfId+"] finished. Exec trace:", this.trace+"." );
     //onsole.log(this.syncCb);
     if (this.syncCb) {
