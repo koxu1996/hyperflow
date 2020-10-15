@@ -1915,7 +1915,7 @@ return {
     getDataInfo: public_getDataInfo,
     getDataInfoFull: public_getDataInfoFull,
     setDataState: public_setDataState,
-    getDataSources: public_getDataSinks,
+    getDataSources: public_getDataSources,
     getDataSinks: public_getDataSinks,
     getRemoteDataSinks: public_getRemoteDataSinks,
     getWfMap: public_getWfMap,
