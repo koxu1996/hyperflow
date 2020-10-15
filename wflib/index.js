@@ -1213,6 +1213,7 @@ function public_getRemoteDataSinks(wfId, dataId, cb) {
     var multi = rcl.multi();
 
     rcl.zcard(dataKey+":sinks", function(err, rep) {
+        // FIXME: rep is not used, multi is not executed, and there is no zrangebyscore -1 -1
         multi.zrangebyscore(dataKey+":sinks", -1, -1, "withscores", function(err, ret) {
             err ? cb(err): cb(null, ret);
         });
