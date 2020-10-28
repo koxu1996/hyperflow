@@ -36,6 +36,14 @@ function print2(ins, outs, config, cb) {
     cb(null, outs);
 }
 
+function print3(ins, outs, config, cb) {
+    let executor = config.executor;
+    let quotedArgs = executor.args.map(x => '"' + x + '"');
+    let cmdx = executor.executable + " " + quotedArgs.join(" ");
+    console.log(cmdx);
+    cb(null, outs);
+}
+
 function echo(ins, outs, config, cb) {
     var data = JSON.stringify(ins[0].data);
     //console.log(data);
@@ -174,6 +182,7 @@ function noop(ins, outs, config, cb) {
 
 exports.print = print;
 exports.print2 = print2;
+exports.print3 = print3;
 exports.add = add;
 exports.sqr = sqr;
 exports.length = length;
